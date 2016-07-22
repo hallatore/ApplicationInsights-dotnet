@@ -28,6 +28,14 @@
         }
 
         /// <summary>
+        /// Gets the list of Func&lt;ITelemetryProcessor, ITelemetryProcessor&gt; objects that are used to build the chain of processors..
+        /// </summary>
+        public IList<Func<ITelemetryProcessor, ITelemetryProcessor>> Factories
+        {
+            get { return factories; }
+        }
+
+        /// <summary>
         /// Uses given factory to add TelemetryProcessor to the chain of processors. The processors
         /// in the chain will be invoked in the same order in which they are added.
         /// </summary>
